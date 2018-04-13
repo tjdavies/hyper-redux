@@ -43,4 +43,4 @@ app(initalState, actionsMap, view, document.getElementById('root'));
 
 ## Live Demo
 
-https://codesandbox.io/s/745pqpnoz6
+[![Edit hyper-redux example](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/745pqpnoz6)
