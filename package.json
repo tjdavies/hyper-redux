@@ -1,10 +1,11 @@
 {
   "name": "hyper-redux",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "hyper app style react/redux",
   "main": "./lib/hyper-redux.js",
   "repository": "git@github.com:tjdavies/hyper-redux.git",
   "author": "tjsdavies <tjsdavies@gmail.com>",
+
   "license": "MIT",
   "types": "./lib/hyper-redux.d.ts",
   "scripts": {

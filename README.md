@@ -1,14 +1,16 @@
-
-
 ## hyper-redux
 
-Create React App is divided into two packages:
+HyperApp style redux (if you must use react and redux and not HyperApp)
 
-* install
+- Fully supports redux debugger with time travel ect
+- Can be strongly styped with type script
+
+## Install
 
 ```sh
   npm install hyper-redux
 ```
+## Example
 
 ```js
 import * as React from 'react';
@@ -36,5 +38,9 @@ function view(state: State, actions: Actions ) {
   );
 }
 
-app(initalState, actionsMap, view, document.getElementById('root') as HTMLElement);
+app(initalState, actionsMap, view, document.getElementById('root'));
 ```
+
+## Live Demo
+
+https://codesandbox.io/s/745pqpnoz6
