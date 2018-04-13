@@ -1,13 +1,15 @@
 {
-  "name": "y",
-  "version": "y",
+  "name": "hyper-redux",
+  "version": "0.0.1",
   "description": "hyper app style react/redux",
-  "main": "y",
+  "main": "./lib/hyper-redux.js",
   "repository": "git@github.com:tjdavies/hyper-redux.git",
   "author": "tjsdavies <tjsdavies@gmail.com>",
-  "license": "y",
+  "license": "mit",
+  "types": "./lib/hyper-redux.d.ts",
   "scripts": {
-    "build": "tsc"
+    "build": "rm ./lib/* && tsc",
+    "prepublish": "yarn run build"
   },
   "devDependencies": {
     "@types/react": "^16.3.9",
