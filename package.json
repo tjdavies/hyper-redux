@@ -5,7 +5,7 @@
   "main": "./lib/hyper-redux.js",
   "repository": "git@github.com:tjdavies/hyper-redux.git",
   "author": "tjsdavies <tjsdavies@gmail.com>",
-  "license": "mit",
+  "license": "MIT",
   "types": "./lib/hyper-redux.d.ts",
   "scripts": {
     "build": "rm ./lib/* && tsc",
