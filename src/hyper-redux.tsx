@@ -3,6 +3,7 @@ import { createStore, Store, AnyAction, Dispatch } from 'redux';
 import { render } from 'react-dom';
 export type ReducerFn<T, U> =  (state: T, actions: U) => T;
 
+
 function createReducer<T, U>( initialState: T, handlers:  Actions<U>, actions: U ) {
     return function reducer( state: T = initialState, action: AnyAction) {
       if (handlers[action.type] !== undefined) {
@@ -28,6 +29,9 @@ function createActions<T>(actions: T, point: any): Actions<T> {
 
 export type View<T, U> = (state: T, actions: U) => JSX.Element;
 
+const AppContext = React.createContext();
+export const AppConsumer = AppContext.Consumer;
+
 class Wrapper<T, U> extends React.Component<{store: Store<T>, view: View<T, U>, actions: U}, any> {
   constructor(props: any) {
     super(props);
@@ -41,7 +45,9 @@ class Wrapper<T, U> extends React.Component<{store: Store<T>, view: View<T, U>, 
   }
   
   render() {
-    return this.props.view(this.state.value, this.props.actions);
+    return <AppContext.Provider value={ {state: this.state.value, actions:this.props.actions} }   >
+      {this.props.view(this.state.value, this.props.actions)};
+    </AppContext.Provider >
   }
 }
 
@@ -59,5 +65,6 @@ export function app<T, U >(
     window['__REDUX_DEVTOOLS_EXTENSION__'] && window['__REDUX_DEVTOOLS_EXTENSION__']() 
   );
   point.dispatch = store.dispatch;
+
   return render(<Wrapper store={store} actions={actions} view={view}/>, document.getElementById('root'));
 }
