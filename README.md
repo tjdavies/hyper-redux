@@ -1,9 +1,13 @@
 ## hyper-redux
 
-HyperApp style redux (if you must use react and redux and not HyperApp)
+HyperApp style redux
 
-- Fully supports redux debugger with time travel ect
-- Can be strongly styped with type script
+For those who need to use react and redux but want something simple
+
+- No more switch statments or action objects
+- Fully supports redux debugger with time travel ect.
+- Can be strongly typed with TypeScript
+- Can use context to access state and actions in nested components
 
 ## Install
 
@@ -14,7 +18,7 @@ HyperApp style redux (if you must use react and redux and not HyperApp)
 
 ```js
 import * as React from 'react';
-import { app,  ReducerFn } from 'hyper-redux';
+import { app } from 'hyper-redux';
 
 const initalState: 0;
 
@@ -27,7 +31,7 @@ const actionsMap = {
   }
 };
 
-function view(state: State, actions: Actions ) {
+function view(state, actions ) {
   return (
     <div>
       <p> Clicked: {state} times </p>
@@ -38,7 +42,7 @@ function view(state: State, actions: Actions ) {
   );
 }
 
-app(initalState, actionsMap, view, document.getElementById('root'));
+app(initalState, actionsMap, view, document.body);
 ```
 
 ## Live Demo
