@@ -1,6 +1,6 @@
 {
   "name": "hyper-redux",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "hyper app style react/redux",
   "main": "./lib/hyper-redux.js",
   "repository": "git@github.com:tjdavies/hyper-redux.git",
